@@ -41,7 +41,17 @@ void Output::on(void)
     this->set(HIGH);
 }
 
+void Output::open(void)
+{
+    return this->on();
+}
+
 void Output::off(void)
 {
     this->set(LOW);
+}
+
+void Output::close(void)
+{
+    return this->off();
 }

@@ -55,11 +55,13 @@ class Output
          * Set the state on
          */
         void on(void);
+        void open(void);
 
         /*
          * Set the state off
          */
         void off(void);
+        void close(void);
 }; 
 
 #endif
