@@ -15,17 +15,15 @@ class Output
         int _pin;
         int _state;
         int _active;
+        int _invert;
 
     public:
         /* 
-         * Constructor, initaite the Output object on Pin p and set the state to 0 (OFF) 
+         * Constructor, initaite the Output object on Pin p and set the state to s and
+         * invert the output
          */
-        Output(int p);
+        Output(int p, int s = false, bool i = false);
 
-        /* 
-         * Constructor, initiate the Output object on Pin p and set the state to s 
-         */
-        Output(int p, int s);
 
         /*
          * Set the output to the passed variable (ON or OFF) and update
