@@ -13,6 +13,7 @@ Output::Output(int p, int s, bool i) : _pin(p)
 
 void Output::setPin(int p, int s, bool i)
 {
+    this->_pin = p;
     pinMode(_pin, OUTPUT);
     s = (s == HIGH) ? HIGH : LOW;
     this->_invert = i;
