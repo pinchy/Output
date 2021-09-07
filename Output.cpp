@@ -1,7 +1,17 @@
 #include "Output.h"
 #include <Arduino.h>
 
+Output::Output()
+{
+    
+}
+
 Output::Output(int p, int s, bool i) : _pin(p)
+{
+    this->setPin(p, s, i);
+}
+
+void Output::setPin(int p, int s, bool i)
 {
     pinMode(_pin, OUTPUT);
     s = (s == HIGH) ? HIGH : LOW;
@@ -9,6 +19,7 @@ Output::Output(int p, int s, bool i) : _pin(p)
 
     digitalWrite(_pin, (s ^ i));
 }
+
 
 void Output::set(int s)
 {
