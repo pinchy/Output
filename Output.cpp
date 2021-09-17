@@ -35,7 +35,7 @@ void Output::toggle()
 
 int Output::getState()
 {
-    return (this->_state ^ this->_invert);
+    return (this->_state);
 }
 
 int Output::checkState()
