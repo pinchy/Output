@@ -23,7 +23,15 @@ class Output
          * invert the output
          */
         Output(int p, int s = false, bool i = false);
+        Output();
 
+
+
+        /*
+         * Set the pin, initaite the Output object on Pin p and set the state to s and
+         * invert the output 
+        */
+        void setPin(int p, int s = false, bool i = false);
 
         /*
          * Set the output to the passed variable (ON or OFF) and update

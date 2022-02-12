@@ -1,14 +1,26 @@
 #include "Output.h"
 #include <Arduino.h>
 
+Output::Output()
+{
+    
+}
+
 Output::Output(int p, int s, bool i) : _pin(p)
 {
+    this->setPin(p, s, i);
+}
+
+void Output::setPin(int p, int s, bool i)
+{
+    this->_pin = p;
     pinMode(_pin, OUTPUT);
     s = (s == HIGH) ? HIGH : LOW;
     this->_invert = i;
 
     digitalWrite(_pin, (s ^ i));
 }
+
 
 void Output::set(int s)
 {
@@ -23,7 +35,7 @@ void Output::toggle()
 
 int Output::getState()
 {
-    return (this->_state ^ this->_invert);
+    return (this->_state);
 }
 
 int Output::checkState()
