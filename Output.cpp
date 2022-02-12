@@ -34,7 +34,7 @@ int Output::checkState()
 
 void Output::on(void)
 {
-    this->set(!this->_invert);
+    this->set(true);
 }
 
 void Output::open(void)
@@ -44,7 +44,7 @@ void Output::open(void)
 
 void Output::off(void)
 {
-    this->set(this->_invert);
+    this->set(false);
 }
 
 void Output::close(void)
