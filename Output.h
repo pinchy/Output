@@ -18,19 +18,17 @@ class Output
         int _invert;
 
     public:
-        /* 
-         * Constructor, initaite the Output object on Pin p and set the state to s and
-         * invert the output
+        /*
+         * Constructor, initaite the Output object on Pin p and set the state to
+         * s and invert the output
          */
         Output(int p, int s = false, bool i = false);
         Output();
 
-
-
         /*
-         * Set the pin, initaite the Output object on Pin p and set the state to s and
-         * invert the output 
-        */
+         * Set the pin, initaite the Output object on Pin p and set the state to
+         * s and invert the output
+         */
         void setPin(int p, int s = false, bool i = false);
 
         /*
@@ -68,6 +66,6 @@ class Output
          */
         void off(void);
         void close(void);
-}; 
+};
 
 #endif

@@ -2,11 +2,9 @@
 #include <Arduino.h>
 
 Output::Output()
-{
-    
-}
+{}
 
-Output::Output(int p, int s, bool i) : _pin(p)
+Output::Output(int p, int s, bool i): _pin(p)
 {
     this->setPin(p, s, i);
 }
@@ -25,7 +23,7 @@ void Output::setPin(int p, int s, bool i)
 void Output::set(int s)
 {
     this->_state = (s == HIGH) ? HIGH : LOW;
-    digitalWrite(_pin, (this->_state ^ this->_invert) );
+    digitalWrite(_pin, (this->_state ^ this->_invert));
 }
 
 void Output::toggle()
