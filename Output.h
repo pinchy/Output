@@ -31,6 +31,7 @@ class Output
          */
         void setPin(int p, int s = false, bool i = false);
 
+        int getPin(void) { return this->_pin; }
         /*
          * Set the output to the passed variable (ON or OFF) and update
          * the internal value
