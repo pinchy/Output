@@ -1,15 +1,10 @@
 #include "Output.h"
-#include <Arduino.h>
 
-Output::Output()
-{}
+Output::Output() {}
 
-Output::Output(int p, int s, bool i): _pin(p)
-{
-    this->setPin(p, s, i);
-}
+Output::Output(uint8_t p, bool s, bool i) : _pin(p) { this->setPin(p, s, i); }
 
-void Output::setPin(int p, int s, bool i)
+void Output::setPin(uint8_t p, bool s, bool i)
 {
     this->_pin = p;
     pinMode(_pin, OUTPUT);
@@ -20,21 +15,15 @@ void Output::setPin(int p, int s, bool i)
 }
 
 
-void Output::set(int s)
+void Output::set(bool s)
 {
     this->_state = (s == HIGH) ? HIGH : LOW;
     digitalWrite(_pin, (this->_state ^ this->_invert));
 }
 
-void Output::toggle()
-{
-    this->set(!this->_state);
-}
+void Output::toggle() { this->set(!this->_state); }
 
-int Output::getState()
-{
-    return (this->_state);
-}
+int Output::getState() { return (this->_state); }
 
 int Output::checkState()
 {
@@ -42,22 +31,8 @@ int Output::checkState()
     return (this->_state ^ this->_invert);
 }
 
-void Output::on(void)
-{
-    this->set(true);
-}
+void Output::on(void) { this->set(true); }
+void Output::open(void) { return this->on(); }
 
-void Output::open(void)
-{
-    return this->on();
-}
-
-void Output::off(void)
-{
-    this->set(false);
-}
-
-void Output::close(void)
-{
-    return this->off();
-}
+void Output::off(void) { this->set(false); }
+void Output::close(void) { return this->off(); }

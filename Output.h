@@ -6,16 +6,18 @@
 #ifndef OUTPUT_H
 #define OUTPUT_H
 
+#include <Arduino.h>
+
 #define ON HIGH
 #define OFF LOW
 
 class Output
 {
     private:
-        int _pin;
-        int _state;
-        int _active;
-        int _invert;
+        uint8_t _pin;
+        bool _state;
+        bool _active;
+        bool _invert;
 
     public:
         /**
@@ -26,7 +28,7 @@ class Output
          * @param s the initial state (default LOW)
          * @param i invert the output (default false)
          */
-        Output(int p, int s = false, bool i = false);
+        Output(uint8_t p, bool s = false, bool i = false);
 
         /**
          * @brief Initialise the output object. Need to call setPin() prior to use
@@ -40,7 +42,7 @@ class Output
          * @param s the initial state (default LOW)
          * @param i invert the output (default false)
          */
-        void setPin(int p, int s = false, bool i = false);
+        void setPin(uint8_t p, bool s = false, bool i = false);
 
         /**
          * @brief get the pin number
@@ -58,7 +60,7 @@ class Output
          * @brief Set the output to the passed state
          * @param s the state to set the output to
          */
-        void set(int s);
+        void set(bool s);
 
         /**
          * @brief Toggle (flip) the state of the pin
