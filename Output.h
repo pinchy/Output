@@ -14,7 +14,7 @@
 class Output
 {
     private:
-        uint8_t _pin;
+        int _pin;
         bool _state;
         bool _active;
         bool _invert;
@@ -28,7 +28,7 @@ class Output
          * @param s the initial state (default LOW)
          * @param i invert the output (default false)
          */
-        Output(uint8_t p, bool s = false, bool i = false);
+        Output(int p, bool s = false, bool i = false);
 
         /**
          * @brief Initialise the output object. Need to call setPin() prior to use
@@ -42,7 +42,7 @@ class Output
          * @param s the initial state (default LOW)
          * @param i invert the output (default false)
          */
-        void setPin(uint8_t p, bool s = false, bool i = false);
+        void setPin(int p, bool s = false, bool i = false);
 
         /**
          * @brief get the pin number

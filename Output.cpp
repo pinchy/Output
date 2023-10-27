@@ -2,9 +2,9 @@
 
 Output::Output() {}
 
-Output::Output(uint8_t p, bool s, bool i) : _pin(p) { this->setPin(p, s, i); }
+Output::Output(int p, bool s, bool i) : _pin(p) { this->setPin(p, s, i); }
 
-void Output::setPin(uint8_t p, bool s, bool i)
+void Output::setPin(int p, bool s, bool i)
 {
     this->_pin = p;
     pinMode(_pin, OUTPUT);
